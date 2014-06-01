@@ -8,6 +8,7 @@
 .navbar-default {
   background-color: #ffffff;
   border-color: #ffffff;
+  color: #ff0099;
 }
 
 .navbar .nav > li > a {
@@ -20,4 +21,8 @@
 
 .navbar-outer {
   width:500px;
+}
+
+img { 
+   border:1px solid #0099ff;
 }
