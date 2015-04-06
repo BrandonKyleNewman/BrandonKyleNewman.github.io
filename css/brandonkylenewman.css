@@ -26,6 +26,10 @@
   color: #ff0099;
 }
 
+a[id="workday"]{
+  color: #F6A01A;
+}
+
 img { 
    margin: 0 auto;
    box-shadow: 0px 0px 30px #888888;
