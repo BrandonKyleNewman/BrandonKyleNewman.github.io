@@ -4,7 +4,7 @@ let colorIndex = 0;
 
 function createEmoticon(emoticon, container) {
     const span = document.createElement("span");
-    span.classList.add("emoticon", "mr-4", "inline-block");
+    span.classList.add("emoticon", "mr-4", "inline-block", "whitespace-nowrap", "font-mono");
 
     // assign a random pastel color
     const hue = Math.floor(Math.random() * 360);
