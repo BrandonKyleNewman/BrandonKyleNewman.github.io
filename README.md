@@ -1,4 +1,4 @@
 # BrandonKyleNewman.github.io
 My personal website
 
-Trying something out real quick down here.
+Version 3.0

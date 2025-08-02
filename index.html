@@ -1,24 +1,41 @@
-<html> 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brandon Newman</title> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brandon Newman</title>
 
-    <link href="css/brandonkylenewman.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  </head>
-  <body>
-    <div id="section">
-      <h1> Brandon Newman </h1>
-      <h2> I'm a Software Engineer </h2>
-    
-      <button id="resume-button" class="button">Resume</button>
-      <button id ="twitter-button" class="button">Twitter</button>
-      <button id="blog-button" class="button">Blog</button>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body class="bg-white text-red-400 font-serif">
+  <div class="grid grid-cols-[1fr_2fr_3fr] h-screen">
+    <!-- Left Nav -->
+    <div class="bg-black text-red p-8 flex flex-col justify-center space-y-4 text-xl">
+      <button data-section="about" class="hover:bg-blue-500 hover:text-black border-2 border-white px-4 py-2 transition-all">About Me</button>
+      <button data-section="projects" class="hover:bg-blue-500 hover:text-black border-2 border-white px-4 py-2 transition-all">Projects</button>
+      <button data-section="contact" class="hover:bg-blue-500 hover:text-black border-2 border-white px-4 py-2 transition-all">Contact</button>
     </div>
 
-    <script src="js/index.js"></script>
-  </body>
+    <!-- Middle Section (Smiley Container) -->
+    <div class="emoticon-container overflow-hidden p-4 leading-tight"></div>
+
+    <!-- Right Content -->
+    <div class="bg-black text-white p-10 flex flex-col justify-center">
+      <h1 id="heading" class="text-5xl font-bold uppercase mb-6">BRANDON NEWMAN</h1>
+      <p id="description" class="text-xl leading-relaxed max-w-prose">
+        I make software.
+      </p>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="scripts/typing-animation.js"></script>
+</body>
 </html>
