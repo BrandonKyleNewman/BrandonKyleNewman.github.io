@@ -1,6 +1,29 @@
 let emoticonIntervalId = null;
 const colorPalette = ["#39F77C", "#F7D439", "#5539F7", "#FF1E71"];
 let colorIndex = 0;
+  
+const sections = {
+  about: {
+    emoticon: ":)",
+    heading: "About Me",
+    text: "I might use this section as long a live blog. Like a billboard kinda thing."
+  },
+  work: {
+    emoticon: ">:3",
+    heading: "Work",
+    text: "I hope to hear nice things from you: "
+  },
+  tools: {
+    emoticon: "#-",
+    heading: "Tools",
+    text: "I'm currently a Senior Software Engineer on the Platform team at Courier Health. I primarily focus on expanding and scaling our abilities to import customer data and transform it for the Courier Health platform."
+  },
+  contact: {
+    emoticon: "<3",
+    heading: "Contact",
+    text: "I hope to hear nice things from you: "
+  }
+};
 
 function createEmoticon(emoticon, container) {
     const span = document.createElement("span");
@@ -32,25 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const middleContent = document.querySelector(".emoticon-container");
     const heading = document.getElementById("heading");
     const description = document.getElementById("description");
-  
-    const sections = {
-      about: {
-        emoticon: ":)",
-        heading: "About Me",
-        text: "I might use this section as long a live blog. Like a billboard kinda thing."
-      },
-      projects: {
-        emoticon: ">:3",
-        heading: "Work",
-        text: "I'm currently a Senior Software Engineer on the Platform team at Courier Health. I primarily focus on expanding and scaling our abilities to import customer data and transform it for the Courier Health platform."
-      },
-      contact: {
-        emoticon: "<3",
-        heading: "Contact",
-        text: "I hope to hear nice things from you: "
-      }
-    };
-  
+
     navButtons.forEach(button => {
       button.addEventListener("click", () => {
         const section = button.dataset.section;
