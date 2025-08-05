@@ -1,6 +1,7 @@
 let emoticonIntervalId = null;
 const colorPalette = ["#39F77C", "#F7D439", "#5539F7", "#FF1E71"];
 let colorIndex = 0;
+const typingSpeed = 100;
   
 const sections = {
   about: {
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.emoticon-container');  
     emoticonIntervalId = setInterval(() => {
         createEmoticon("hello ", container);
-    }, 60);
+    }, typingSpeed);
 });  
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           emoticonIntervalId = setInterval(() => {
             createEmoticon(emoticon, container);
-        }, 60); // type every 60ms
+        }, typingSpeed); // type every 60ms
         }
       });
     });
