@@ -14,21 +14,27 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="styles/style.css" />
 </head>
-<body class="text-white font-serif bg-black">
-  <div class="grid grid-cols-[1fr_2fr_4fr] h-screen">
+<body class="text-black font-serif bg-white">
+  <div class="md:grid md:grid-cols-[1fr_2fr_4fr] md:h-screen">
     <!-- Left Nav -->
-    <div class="text-red p-8 flex flex-col justify-center space-y-4 text-xl">
-      <button data-section="about" class="bg-[#FF1E71] text-white hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">about me</button>
-      <button data-section="work" class="bg-[#F7D439] text-black hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">work</button>
-      <button data-section="tools" class="bg-[#39F77C] text-black hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">tools</button>
-      <button data-section="contact" class="bg-[#5539F7] text-white hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">contact</button>
+    <div class="flex flex-col justify-center bg-red-200">
+        <!-- Hamburger Icon (Mobile Only) -->
+        <button id="menu-button" class="md:hidden">
+            - - -
+        </button>
+      <div id="button-column" class="hidden flex flex-col md:flex md:flex-col">
+        <button data-section="about" class="bg-[#FF1E71] text-white hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">about me</button>
+        <button data-section="work" class="bg-[#F7D439] text-black hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">work</button>
+        <button data-section="tools" class="bg-[#39F77C] text-black hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">tools</button>
+        <button data-section="contact" class="bg-[#5539F7] text-white hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">contact</button>
+      </div>
     </div>
 
     <!-- Middle Section (Smiley Container) -->
-    <div class="emoticon-container text-[1.7rem] leading-[1.2] flex flex-wrap content-start justify-start overflow-hidden p-[1rem] text-white bg-black h-screen w-full"></div>
+    <div class="emoticon-container text-[1.7rem] leading-[1.2] flex flex-wrap content-start justify-start overflow-hidden p-[1rem] text-white h-screen w-full"></div>
 
     <!-- Right Content -->
-    <div class="text-white p-10 flex flex-col justify-center">
+    <div class="text-black p-10 flex flex-col justify-center">
       <h1 id="heading" class="text-5xl mb-6">Brandon</h1>
       <p id="description" class="text-xl leading-relaxed max-w-prose">
         I make software.
