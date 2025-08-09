@@ -76,3 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById('menu-button');
+    const buttonColumn = document.getElementById('button-column');
+
+    menuButton.addEventListener("click", () => {
+      buttonColumn.classList.toggle("hidden");
+    })
+});  
