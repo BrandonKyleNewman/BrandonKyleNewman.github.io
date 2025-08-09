@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.emoticon-container');  
     emoticonIntervalId = setInterval(() => {
         createEmoticon("hello ", container);
-    }, 60);
+    }, 200);
 });  
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           emoticonIntervalId = setInterval(() => {
             createEmoticon(emoticon, container);
-        }, 60); // type every 60ms
+        }, 200); // type every 60ms
         }
       });
     });
