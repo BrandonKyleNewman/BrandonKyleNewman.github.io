@@ -14,28 +14,35 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="styles/style.css" />
 </head>
-<body class="bg-white text-red-400 font-serif">
-  <div class="grid grid-cols-[1fr_2fr_3fr] h-screen">
-    <!-- Left Nav -->
-    <div class="bg-black text-red p-8 flex flex-col justify-center space-y-4 text-xl">
-      <button data-section="about" class="hover:bg-blue-500 hover:text-black border-2 border-white px-4 py-2 transition-all">About Me</button>
-      <button data-section="projects" class="hover:bg-blue-500 hover:text-black border-2 border-white px-4 py-2 transition-all">Projects</button>
-      <button data-section="contact" class="hover:bg-blue-500 hover:text-black border-2 border-white px-4 py-2 transition-all">Contact</button>
+<body class="text-black font-serif bg-white">
+  <!-- Middle Section (Smiley Container) -->
+    <div class="flex flex-col justify-center bg-red-200">
+        <!-- Hamburger Icon (Mobile Only) -->
+        <button id="menu-button" class="md:hidden">
+            - - -
+        </button>
+      <div id="button-column" class="max-h-0 overflow-hidden transition-[max-height] duration-200 ease-in-out flex flex-col">
+        <button data-section="about" class="bg-[#FF1E71] text-white hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">about me</button>
+        <button data-section="work" class="bg-[#F7D439] text-black hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">work</button>
+        <button data-section="tools" class="bg-[#39F77C] text-black hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">tools</button>
+        <button data-section="contact" class="bg-[#5539F7] text-white hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">contact</button>
+      </div>
     </div>
-
-    <!-- Middle Section (Smiley Container) -->
-    <div class="emoticon-container overflow-hidden p-4 leading-tight"></div>
+  <div class="grid grid-cols-[1fr_5fr] h-screen">
+    <!-- Left Nav -->
+    <div class="emoticon-container text-[1rem] md:text-[1.7rem] leading-[1.2] flex flex-wrap content-start justify-start overflow-hidden p-[1rem] text-white w-full"></div>
 
     <!-- Right Content -->
-    <div class="bg-black text-white p-10 flex flex-col justify-center">
-      <h1 id="heading" class="text-5xl font-bold uppercase mb-6">BRANDON NEWMAN</h1>
+    <div class="text-black p-10">
+      <h1 id="heading" class="text-5xl mb-6">Brandon</h1>
       <p id="description" class="text-xl leading-relaxed max-w-prose">
         I make software.
       </p>
     </div>
   </div>
 
+  
   <!-- External JS -->
-  <script src="scripts/typing-animation.js"></script>
+  <script type="module" src="scripts/main.js"></script>
 </body>
 </html>

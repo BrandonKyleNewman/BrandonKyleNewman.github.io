@@ -1,10 +1,36 @@
+import { sections } from "./data.js"
+
 let emoticonIntervalId = null;
 const colorPalette = ["#39F77C", "#F7D439", "#5539F7", "#FF1E71"];
 let colorIndex = 0;
 
+  
+// const sections = {
+//   about: {
+//     emoticon: ":)",
+//     heading: "About Me",
+//     text: "My name is Brandon Newman, and I've been a software engineer for 10+ years. I often tell people how lucky I am that I get to solve puzzles for a living. I'm currently based in NYC."
+//   },
+//   work: {
+//     emoticon: ">:3",
+//     heading: "Work",
+//     text: "I'm currently a Senior Software Engineer on the Platform team at Courier Health. I primarily focus on expanding and scaling our abilities to import customer data and transform it for the Courier Health platform."
+//   },
+//   tools: {
+//     emoticon: "#-",
+//     heading: "Tools",
+//     text: ""
+//   },
+//   contact: {
+//     emoticon: "<3",
+//     heading: "Contact",
+//     text: "I hope to hear nice things from you: "
+//   }
+// };
+
 function createEmoticon(emoticon, container) {
     const span = document.createElement("span");
-    span.classList.add("emoticon", "mr-4", "inline-block");
+    span.classList.add("emoticon", "mr-4", "inline-block", "whitespace-nowrap", "font-mono");
 
     // assign a random pastel color
     const hue = Math.floor(Math.random() * 360);
@@ -24,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.emoticon-container');  
     emoticonIntervalId = setInterval(() => {
         createEmoticon("hello ", container);
-    }, 60);
+    }, 200);
 });  
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,25 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const middleContent = document.querySelector(".emoticon-container");
     const heading = document.getElementById("heading");
     const description = document.getElementById("description");
-  
-    const sections = {
-      about: {
-        emoticon: ":)",
-        heading: "About Me",
-        text: "I might use this section as long a live blog. Like a billboard kinda thing."
-      },
-      projects: {
-        emoticon: ">:3",
-        heading: "Work",
-        text: "I'm currently a Senior Software Engineer on the Platform team at Courier Health. I primarily focus on expanding and scaling our abilities to import customer data and transform it for the Courier Health platform."
-      },
-      contact: {
-        emoticon: "<3",
-        heading: "Contact",
-        text: "I hope to hear nice things from you: "
-      }
-    };
-  
+
     navButtons.forEach(button => {
       button.addEventListener("click", () => {
         const section = button.dataset.section;
@@ -66,8 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           emoticonIntervalId = setInterval(() => {
             createEmoticon(emoticon, container);
-        }, 60); // type every 60ms
+        }, 200); // type every 60ms
         }
       });
     });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.getElementById('menu-button');
+  const buttonColumn = document.getElementById('button-column');
+
+  menuButton.addEventListener("click", () => {
+    buttonColumn.classList.toggle('max-h-0');
+    buttonColumn.classList.toggle('max-h-[24rem]');
+  })
 });
