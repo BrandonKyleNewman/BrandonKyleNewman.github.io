@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Position Playground</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="grid grid-cols-3 gap-8">
+
+    <!-- 1. Relative -->
+    <div class="relative bg-blue-200 w-48 h-48 p-2">
+      <p class="text-sm">Relative parent</p>
+      <!-- This is positioned relative to where it would normally be -->
+      <div class="relative top-4 left-4 bg-blue-500 text-white w-20 h-20 flex items-center justify-center">
+        Rel.
+      </div>
+    </div>
+
+    <!-- 2. Absolute inside relative -->
+    <div class="relative bg-green-200 w-48 h-48 p-2">
+      <p class="text-sm">Relative parent + absolute child</p>
+      <!-- Because parent is relative, absolute uses this box as its "desk" -->
+      <div class="absolute bottom-0 right-0 bg-green-500 text-white w-20 h-20 flex items-center justify-center">
+        Abs.
+      </div>
+    </div>
+
+    <!-- 3. Absolute with no positioned parent -->
+    <div class="bg-red-200 w-48 h-48 p-2">
+      <p class="text-sm">No positioning on parent</p>
+      <!-- No relative parent, so absolute uses the *page* as its desk -->
+      <div class="absolute bottom-0 right-0 bg-red-500 text-white w-20 h-20 flex items-center justify-center">
+        Abs.
+      </div>
+    </div>
+
+  </div>
+  
+
+</body>
+</html>
