@@ -16,22 +16,21 @@
 </head>
 <body class="text-black font-serif bg-white">
   <!-- Middle Section (Smiley Container) -->
-  <div class="grid grid-rows-[1fr_2fr_10fr] h-screen">
-    <!-- Left Nav -->
     <div class="flex flex-col justify-center bg-red-200">
         <!-- Hamburger Icon (Mobile Only) -->
         <button id="menu-button" class="md:hidden">
             - - -
         </button>
-      <div id="button-column" class="hidden flex flex-col">
+      <div id="button-column" class="max-h-0 overflow-hidden transition-[max-height] duration-200 ease-in-out flex flex-col">
         <button data-section="about" class="bg-[#FF1E71] text-white hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">about me</button>
         <button data-section="work" class="bg-[#F7D439] text-black hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">work</button>
         <button data-section="tools" class="bg-[#39F77C] text-black hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">tools</button>
         <button data-section="contact" class="bg-[#5539F7] text-white hover:bg-[#39F77C] hover:text-black px-4 py-2 transition-all">contact</button>
       </div>
     </div>
-
-    <div class="emoticon-container text-[0.5rem] md:text-[1.7rem] leading-[1.2] flex flex-wrap content-start justify-start overflow-hidden p-[1rem] text-white w-full"></div>
+  <div class="grid grid-cols-[1fr_5fr] h-screen">
+    <!-- Left Nav -->
+    <div class="emoticon-container text-[1rem] md:text-[1.7rem] leading-[1.2] flex flex-wrap content-start justify-start overflow-hidden p-[1rem] text-white w-full"></div>
 
     <!-- Right Content -->
     <div class="text-black p-10">
@@ -44,6 +43,6 @@
 
   
   <!-- External JS -->
-  <script src="scripts/typing-animation.js"></script>
+  <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
