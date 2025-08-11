@@ -4,80 +4,109 @@ let emoticonIntervalId = null;
 const colorPalette = ["#39F77C", "#F7D439", "#5539F7", "#FF1E71"];
 let colorIndex = 0;
 
-  
-// const sections = {
-//   about: {
-//     emoticon: ":)",
-//     heading: "About Me",
-//     text: "My name is Brandon Newman, and I've been a software engineer for 10+ years. I often tell people how lucky I am that I get to solve puzzles for a living. I'm currently based in NYC."
-//   },
-//   work: {
-//     emoticon: ">:3",
-//     heading: "Work",
-//     text: "I'm currently a Senior Software Engineer on the Platform team at Courier Health. I primarily focus on expanding and scaling our abilities to import customer data and transform it for the Courier Health platform."
-//   },
-//   tools: {
-//     emoticon: "#-",
-//     heading: "Tools",
-//     text: ""
-//   },
-//   contact: {
-//     emoticon: "<3",
-//     heading: "Contact",
-//     text: "I hope to hear nice things from you: "
-//   }
-// };
-
 function createEmoticon(emoticon, container) {
-    const span = document.createElement("span");
-    span.classList.add("emoticon", "mr-4", "inline-block", "whitespace-nowrap", "font-mono");
+  const span = document.createElement("span");
+  span.classList.add("emoticon", "mr-4", "inline-block", "whitespace-nowrap", "font-mono");
 
     // assign a random pastel color
-    const hue = Math.floor(Math.random() * 360);
-    span.style.color = colorPalette[colorIndex%colorPalette.length];
-    colorIndex++;
+  const hue = Math.floor(Math.random() * 360);
+  span.style.color = colorPalette[colorIndex%colorPalette.length];
+  colorIndex++;
 
-    span.textContent = emoticon;
-    container.appendChild(span);
+  span.textContent = emoticon;
+  container.appendChild(span);
 
     // check if we've overflown the container
-    if (container.scrollHeight > container.clientHeight) {
-      container.innerHTML = ""; // start over
-    }
+  if (container.scrollHeight > container.clientHeight) {
+    container.innerHTML = ""; // start over
   }
+}
+
+function renderItems(infoItems, items) {
+  if (!items) return;
+
+  infoItems.innerHTML = ""; 
+
+  items.forEach(item => {
+    // Create item wrapper
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "flex items-center space-x-6";
+
+    // Image placeholder or actual image
+    const img = document.createElement("img");
+    img.src = item.image || "/path/to/placeholder.png"; // fallback
+    img.alt = item.name || "Item image";
+    img.className = "w-20 h-20 rounded-md object-cover flex-shrink-0";
+
+    // Text container
+    const textDiv = document.createElement("div");
+    textDiv.className = "flex flex-col";
+
+    // Name (heading)
+    const nameEl = document.createElement("h3");
+    nameEl.className = "text-2xl font-semibold";
+    nameEl.textContent = item.name;
+
+    // Subheader (optional)
+    if (item.subheader) {
+      const subheaderEl = document.createElement("p");
+      subheaderEl.className = "text-sm text-gray-600";
+      subheaderEl.textContent = item.subheader;
+      textDiv.appendChild(subheaderEl);
+    }
+
+    // Description (optional)
+    if (item.description) {
+      const descEl = document.createElement("p");
+      descEl.className = "text-base text-gray-800";
+      descEl.textContent = item.description;
+      textDiv.appendChild(descEl);
+    }
+
+    textDiv.prepend(nameEl); // Ensure name is first
+
+    itemDiv.appendChild(img);
+    itemDiv.appendChild(textDiv);
+
+    infoItems.appendChild(itemDiv);
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-    const container = document.querySelector('.emoticon-container');  
-    emoticonIntervalId = setInterval(() => {
-        createEmoticon("hello ", container);
-    }, 200);
-});  
+  const container = document.querySelector('.emoticon-container');  
+  emoticonIntervalId = setInterval(() => {
+    createEmoticon("hello ", container);
+  }, 200);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
-    const navButtons = document.querySelectorAll("[data-section]");
-    const middleContent = document.querySelector(".emoticon-container");
-    const heading = document.getElementById("heading");
-    const description = document.getElementById("description");
+  const navButtons = document.querySelectorAll("[data-section]");
+  const middleContent = document.querySelector(".emoticon-container");
+  const heading = document.getElementById("heading");
+  const description = document.getElementById("description");
+  const infoItems = document.getElementById("info-items");
 
-    navButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const section = button.dataset.section;
-        if (sections[section]) {
-          middleContent.textContent = "";
-          heading.textContent = sections[section].heading;
-          description.textContent = sections[section].text;
+  navButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const section = button.dataset.section;
+      if (sections[section]) {
+        middleContent.textContent = "";
+        heading.textContent = sections[section].heading;
+        description.textContent = sections[section].text;
+        renderItems(infoItems, sections[section].items);
 
-          const emoticon = sections[section].emoticon;
-          const container = document.querySelector('.emoticon-container');
-          if (emoticonIntervalId !== null) {
-            clearInterval(emoticonIntervalId);
-          }
-          emoticonIntervalId = setInterval(() => {
-            createEmoticon(emoticon, container);
-        }, 200); // type every 60ms
+        const emoticon = sections[section].emoticon;
+        const container = document.querySelector('.emoticon-container');
+        if (emoticonIntervalId !== null) {
+          clearInterval(emoticonIntervalId);
         }
-      });
+        emoticonIntervalId = setInterval(() => {
+          createEmoticon(emoticon, container);
+      }, 200); // type every 60ms
+      }
     });
+  });
+  console.log("b");
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -88,4 +117,5 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonColumn.classList.toggle('max-h-0');
     buttonColumn.classList.toggle('max-h-[24rem]');
   })
+  console.log("wuat ")
 });
