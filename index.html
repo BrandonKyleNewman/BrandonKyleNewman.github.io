@@ -14,11 +14,11 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="styles/style.css" />
 </head>
-<body class="text-black font-serif bg-white">
+<body class="bg-white text-black font-serif dark:bg-black dark:text-white">
   <!-- Middle Section (Smiley Container) -->
-    <div class="flex flex-col justify-center bg-red-200">
+    <div class="flex flex-col justify-center">
         <!-- Hamburger Icon (Mobile Only) -->
-        <button id="menu-button" class="md:hidden">
+        <button id="menu-button" class="md:hidden text-black dark:text-white">
             - - -
         </button>
       <div id="button-column" class="max-h-0 overflow-hidden transition-[max-height] duration-200 ease-in-out flex flex-col">
@@ -33,15 +33,15 @@
     <div class="emoticon-container text-[1rem] md:text-[1.7rem] leading-[1.2] flex flex-wrap content-start justify-start overflow-hidden p-[1rem] text-white w-full"></div>
 
     <!-- Right Content -->
-    <div class="text-black p-10">
+    <div class="p-10">
       <h1 id="heading" class="text-5xl mb-6">Brandon</h1>
       <p id="description" class="text-xl leading-relaxed max-w-prose">
         I make software.
       </p>
+      <div id="info-items" class="space-y-8"></div>
     </div>
   </div>
 
-  
   <!-- External JS -->
   <script type="module" src="scripts/main.js"></script>
 </body>
