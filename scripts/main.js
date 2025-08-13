@@ -22,7 +22,7 @@ function createEmoticon(emoticon, container) {
   }
 }
 
-function renderItems(infoItems, items) {
+function renderItems(infoItems, items, isContact) {
   if (!items) return;
 
   infoItems.innerHTML = ""; 
@@ -49,11 +49,18 @@ function renderItems(infoItems, items) {
       textDiv.appendChild(subheaderEl);
     }
 
+    let descEl;
     // Description (optional)
     if (item.description) {
-      const descEl = document.createElement("p");
-      descEl.className = "text-base text-gray-800";
+      if (isContact) {
+        descEl = document.createElement("a");
+        descEl.href = item.description;
+      } else {
+        descEl = document.createElement("p");
+        descEl.textContent = item.description;
+      }
       descEl.textContent = item.description;
+      descEl.className = "text-base text-gray-800";
       textDiv.appendChild(descEl);
     }
 
@@ -85,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         middleContent.textContent = "";
         heading.textContent = sections[section].heading;
         description.textContent = sections[section].text;
-        renderItems(infoItems, sections[section].items);
+        renderItems(infoItems, sections[section].items, sections[section].heading === "Contact");
 
         const emoticon = sections[section].emoticon;
         const container = document.querySelector('.emoticon-container');
@@ -98,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  console.log("b");
+
 });
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,8 +1,26 @@
 export const sections = {
   about: {
     emoticon: ":)",
-    heading: "About Me",
-    text: "My name is Brandon Newman, and I've been a software engineer for 10+ years. I often tell people how lucky I am that I get to solve puzzles for a living. I'm currently based in NYC."
+    heading: "Brandon Newman",
+    text: "A little about me for the curious.",
+    items: [
+      {
+        name: "Software Engineer",
+        description: "10+ years of solving puzzles for a living.",
+      },
+      {
+        name: "Husband & Dog Dad",
+        description: "delanie. ajax."
+      },
+      {
+        name: "New York City",
+        description: "previously: california. texas. ",
+      },
+      {
+        name: "Assorted Hobbies",
+        description: "tennis. u2. coding. reality tv. fitness. cooking."
+      },
+    ],
   },
   work: {
     emoticon: ">:3",
@@ -38,15 +56,23 @@ export const sections = {
     items: [
       {
         name: "cloud",
-        description: "AWS",
+        description: "aws. ec2. lambda. glue. s3. docker. terraform. snowflake.",
       },
       {
-        name: "programming languages",
-        description: "Typescript, Python, Swift",
+        name: "languages",
+        description: "typescript. python. go. html. css. swift. sql.",
       },
       {
         name: "databases",
-        description: "Postgres, DynamoDB",
+        description: "postgres. mysql. dynamodb. mongodb.",
+      }, 
+      {
+        name: "devops",
+        description: "jenkins. github actions.",
+      },
+      {
+        name: "testing",
+        description: "jest. postman. pytest.",
       }, 
     ]
   },
@@ -56,16 +82,16 @@ export const sections = {
     text: "I hope to hear nice things from you: ",
     items: [
       {
-        name: "linkedin",
-        description: "tbd"
+        name: "email",
+        description: "brandonkylenewman@gmail.com"
       },
       {
-        name: "email",
-        description: "tbd"
+        name: "linkedin",
+        description: "linkin.com/in/brandonkylenewman"
       },
       {
         name: "bluesky",
-        description: "tbd",
+        description: "brandon-newman.bsky.social",
       },
     ]
   }
