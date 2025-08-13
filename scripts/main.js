@@ -32,12 +32,6 @@ function renderItems(infoItems, items) {
     const itemDiv = document.createElement("div");
     itemDiv.className = "flex items-center space-x-6";
 
-    // Image placeholder or actual image
-    const img = document.createElement("img");
-    img.src = item.image || "/path/to/placeholder.png"; // fallback
-    img.alt = item.name || "Item image";
-    img.className = "w-20 h-20 rounded-md object-cover flex-shrink-0";
-
     // Text container
     const textDiv = document.createElement("div");
     textDiv.className = "flex flex-col";
@@ -65,9 +59,7 @@ function renderItems(infoItems, items) {
 
     textDiv.prepend(nameEl); // Ensure name is first
 
-    itemDiv.appendChild(img);
     itemDiv.appendChild(textDiv);
-
     infoItems.appendChild(itemDiv);
   });
 }
