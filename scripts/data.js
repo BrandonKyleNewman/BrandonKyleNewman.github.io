@@ -11,26 +11,22 @@ export const sections = {
     items: [
       {
         name: "Courier Health",
-        image: "temp",
-        description: "",
+        description: "backend. platform team.",
         subheader: "2025 - present"
       },
       {
         name: "Capital One",
-        image: "temp",
-        description: "",
+        description: "backend. rewards team.",
         subheader: "2022 - 2024"
       },
       {
         name: "Lark Health",
-        image: "temp",
-        description: "",
+        description: "backend. user management team.",
         subheader: "2020 - 2021"
       },
       {
         name: "Workday",
-        image: "temp",
-        description: "",
+        description: "backend. absence team.",
         subheader: "2014 - 2020"
       }
     ],
@@ -42,17 +38,14 @@ export const sections = {
     items: [
       {
         name: "cloud",
-        image: "temp",
         description: "AWS",
       },
       {
         name: "programming languages",
-        image: "temp",
         description: "Typescript, Python, Swift",
       },
       {
         name: "databases",
-        image: "temp",
         description: "Postgres, DynamoDB",
       }, 
     ]
@@ -64,17 +57,14 @@ export const sections = {
     items: [
       {
         name: "linkedin",
-        image: "tbd",
         description: "tbd"
       },
       {
         name: "email",
-        image: "tbd",
         description: "tbd"
       },
       {
         name: "bluesky",
-        image: "tbd",
         description: "tbd",
       },
     ]
