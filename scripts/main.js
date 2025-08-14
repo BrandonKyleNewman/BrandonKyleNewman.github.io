@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const navButtons = document.querySelectorAll("[data-section]");
+  const buttonColumn = document.getElementById('button-column');
   const middleContent = document.querySelector(".emoticon-container");
   const heading = document.getElementById("heading");
   const description = document.getElementById("description");
@@ -101,11 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         emoticonIntervalId = setInterval(() => {
           createEmoticon(emoticon, container);
-      }, 200); // type every 60ms
+        }, 200);
+         // type every 60ms
+        buttonColumn.classList.toggle('max-h-0');
+        buttonColumn.classList.toggle('max-h-[24rem]');
       }
     });
   });
-
 });
 
 document.addEventListener("DOMContentLoaded", () => {
