@@ -14,30 +14,30 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body class="flex flex-col justify-center bg-[#FFF7D6] text-black font-serif dark:bg-black dark:text-white">
-    <div class="sticky md:absolute flex flex-col md:flex-[1] items-center md:items-end top-0 z-10 w-full">
+  <body class="flex flex-col justify-center bg-[#FFF7D6] dark:bg-black font-serif text-black dark:text-white">
+    <div class="top-0 z-10 md:absolute sticky flex flex-col md:flex-[1] items-center md:items-end w-full">
       <!-- Hamburger Icon (Mobile Only) -->
       <button id="menu-button" class="flex justify-center items-center w-full text-black dark:text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-10 md:w-10 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 md:w-10 h-5 md:h-10 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      <div id="button-column" class="md:absolute flex flex-col md:top-0 md:right-10 md:space-y-2 w-full md:w-1/6 max-h-0 overflow-hidden bg-[#FFF7D6] dark:bg-black transition-[max-height] duration-200 ease-in-out">
-        <button data-section="about" class="bg-[#FF1E71] text-white whitespace-nowrap hover:bg-[#FF1E71]/50 hover:text-black px-4 py-2 transition-all">about me</button>
-        <button data-section="work" class="bg-[#F7D439] text-black whitespace-nowrap hover:bg-[#F7D439]/50 hover:text-black px-4 py-2 transition-all">work</button>
-        <button data-section="tools" class="bg-[#39F77C] text-black whitespace-nowrap hover:bg-[#39F77C]/50 hover:text-black px-4 py-2 transition-all">tools</button>
-        <button data-section="contact" class="bg-[#5539F7] text-white whitespace-nowrap hover:bg-[#5539F7]/50 hover:text-black px-4 py-2 transition-all">contact</button>
+      <div id="button-column" class="md:top-0 md:right-10 md:absolute flex flex-col md:space-y-2 bg-[#FFF7D6] dark:bg-black w-full md:w-1/6 max-h-0 overflow-hidden transition-[max-height] duration-200 ease-in-out">
+        <button data-section="about" class="bg-[#FF1E71] hover:bg-[#FF1E71]/50 px-4 py-2 text-white hover:text-black whitespace-nowrap transition-all">about me</button>
+        <button data-section="work" class="bg-[#F7D439] hover:bg-[#F7D439]/50 px-4 py-2 text-black hover:text-black whitespace-nowrap transition-all">work</button>
+        <button data-section="tools" class="bg-[#39F77C] hover:bg-[#39F77C]/50 px-4 py-2 text-black hover:text-black whitespace-nowrap transition-all">tools</button>
+        <button data-section="contact" class="bg-[#5539F7] hover:bg-[#5539F7]/50 px-4 py-2 text-white hover:text-black whitespace-nowrap transition-all">contact</button>
       </div>
     </div>
-    <div class="grid grid-cols-[1fr_5fr] md:flex-[5] h-screen">
+    <div class="md:flex-[5] grid grid-cols-[1fr_5fr] h-screen">
       <!-- Left Nav -->
-      <div class="emoticon-container text-[1rem] md:text-[1.7rem] leading-[1.2] flex flex-wrap content-start justify-start overflow-hidden p-[1rem] text-white w-full"></div>
+      <div class="flex flex-wrap justify-start content-start p-[1rem] w-full overflow-hidden text-[1rem] text-white md:text-[1.7rem] leading-[1.2] emoticon-container"></div>
 
       <!-- Right Content -->
       <div class="">
         <div class="p-10">
-          <h1 id="heading" class="text-5xl mb-6">hello</h1>
-          <p id="description" class="text-xl leading-relaxed max-w-prose">I'm Brandon Newman. I'm a software engineer based in NYC. I currently work on the platform team at Courier Health, working primarily on our data ingest and materialize functionality.</p>
+          <h1 id="heading" class="mb-6 text-5xl">hello</h1>
+          <p id="description" class="max-w-prose text-xl leading-relaxed">I'm Brandon Newman. I'm a software engineer based in NYC. I currently work on the platform team at Courier Health, working primarily on our data ingest and materialize functionality.</p>
         </div>
         <div id="info-items" class="space-y-8 px-10"></div>
       </div>
