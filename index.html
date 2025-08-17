@@ -14,21 +14,22 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="styles/style.css" />
 </head>
-<body class="bg-[#FFF7D6] text-black font-serif dark:bg-black dark:text-white">
-  <!-- Middle Section (Smiley Container) -->
-    <div class="sticky top-0 z-10 dark:bg-black flex flex-col justify-center">
-        <!-- Hamburger Icon (Mobile Only) -->
-        <button id="menu-button" class="md:hidden text-black dark:text-white">
-            ---
-        </button>
-      <div id="button-column" class="max-h-0 overflow-hidden transition-[max-height] duration-200 ease-in-out flex flex-col">
-        <button data-section="about" class="bg-[#FF1E71] text-white hover:bg-[#FF1E71]/50 hover:text-black px-4 py-2 transition-all">about me</button>
-        <button data-section="work" class="bg-[#F7D439] text-black hover:bg-[#F7D439]/50 hover:text-black px-4 py-2 transition-all">work</button>
-        <button data-section="tools" class="bg-[#39F77C] text-black hover:bg-[#39F77C]/50 hover:text-black px-4 py-2 transition-all">tools</button>
-        <button data-section="contact" class="bg-[#5539F7] text-white hover:bg-[#5539F7]/50 hover:text-black px-4 py-2 transition-all">contact</button>
-      </div>
+<body class="bg-[#FFF7D6] text-black font-serif dark:bg-black dark:text-white flex flex-col justify-center">
+  <div class="sticky md:absolute top-0 z-10 w-full flex flex-col items-center md:flex-[1] md:items-end md:z-10 ">
+    <!-- Hamburger Icon (Mobile Only) -->
+    <button id="menu-button" class="text-black dark:text-white ">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    <div id="button-column" class="bg-[#FFF7D6] dark:bg-black overflow-hidden transition-[max-height] duration-200 ease-in-out w-full md:w-1/6 max-h-0 md:absolute md:top-0 md:right-10 md:space-y-2 flex flex-col">
+      <button data-section="about" class="bg-[#FF1E71] text-white whitespace-nowrap hover:bg-[#FF1E71]/50 hover:text-black px-4 py-2 transition-all">about me</button>
+      <button data-section="work" class="bg-[#F7D439] text-black whitespace-nowrap hover:bg-[#F7D439]/50 hover:text-black px-4 py-2 transition-all">work</button>
+      <button data-section="tools" class="bg-[#39F77C] text-black whitespace-nowrap hover:bg-[#39F77C]/50 hover:text-black px-4 py-2 transition-all">tools</button>
+      <button data-section="contact" class="bg-[#5539F7] text-white whitespace-nowrap hover:bg-[#5539F7]/50 hover:text-black px-4 py-2 transition-all">contact</button>
     </div>
-  <div class="grid grid-cols-[1fr_5fr] h-screen">
+  </div>
+  <div class="grid grid-cols-[1fr_5fr] md:flex-[5] h-screen">
     <!-- Left Nav -->
     <div class="emoticon-container text-[1rem] md:text-[1.7rem] leading-[1.2] flex flex-wrap content-start justify-start overflow-hidden p-[1rem] text-white w-full"></div>
 
