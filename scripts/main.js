@@ -1,4 +1,4 @@
-import { sections } from "./data.js"
+import { sections } from "./data.js";
 
 let emoticonIntervalId = null;
 const colorPalette = ["#39F77C", "#F7D439", "#5539F7", "#FF1E71"];
@@ -6,17 +6,23 @@ let colorIndex = 0;
 
 function createEmoticon(emoticon, container) {
   const span = document.createElement("span");
-  span.classList.add("emoticon", "mr-4", "inline-block", "whitespace-nowrap", "font-mono");
+  span.classList.add(
+    "emoticon",
+    "mr-4",
+    "inline-block",
+    "whitespace-nowrap",
+    "font-mono"
+  );
 
-    // assign a random pastel color
+  // assign a random pastel color
   const hue = Math.floor(Math.random() * 360);
-  span.style.color = colorPalette[colorIndex%colorPalette.length];
+  span.style.color = colorPalette[colorIndex % colorPalette.length];
   colorIndex++;
 
   span.textContent = emoticon;
   container.appendChild(span);
 
-    // check if we've overflown the container
+  // check if we've overflown the container
   if (container.scrollHeight > container.clientHeight) {
     container.innerHTML = ""; // start over
   }
@@ -25,9 +31,9 @@ function createEmoticon(emoticon, container) {
 function renderItems(infoItems, items, isContact) {
   if (!items) return;
 
-  infoItems.innerHTML = ""; 
+  infoItems.innerHTML = "";
 
-  items.forEach(item => {
+  items.forEach((item) => {
     // Create item wrapper
     const itemDiv = document.createElement("div");
     itemDiv.className = "flex items-center space-x-6";
@@ -80,7 +86,7 @@ function toggleMenu(buttonColumn) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector('.emoticon-container');  
+  const container = document.querySelector(".emoticon-container");
   emoticonIntervalId = setInterval(() => {
     createEmoticon("hello ", container);
   }, 200);
@@ -88,30 +94,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const navButtons = document.querySelectorAll("[data-section]");
-  const buttonColumn = document.getElementById('button-column');
+  const buttonColumn = document.getElementById("button-column");
   const middleContent = document.querySelector(".emoticon-container");
   const heading = document.getElementById("heading");
   const description = document.getElementById("description");
   const infoItems = document.getElementById("info-items");
 
-  navButtons.forEach(button => {
+  navButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const section = button.dataset.section;
       if (sections[section]) {
         middleContent.textContent = "";
         heading.textContent = sections[section].heading;
         description.textContent = sections[section].text;
-        renderItems(infoItems, sections[section].items, sections[section].heading === "Contact");
+        renderItems(
+          infoItems,
+          sections[section].items,
+          sections[section].heading === "Contact"
+        );
 
         const emoticon = sections[section].emoticon;
-        const container = document.querySelector('.emoticon-container');
+        const container = document.querySelector(".emoticon-container");
         if (emoticonIntervalId !== null) {
           clearInterval(emoticonIntervalId);
         }
         emoticonIntervalId = setInterval(() => {
           createEmoticon(emoticon, container);
         }, 200);
-         // type every 60ms
+        // type every 60ms
         toggleMenu(buttonColumn);
       }
     });
@@ -119,10 +129,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const menuButton = document.getElementById('menu-button');
-  const buttonColumn = document.getElementById('button-column');
+  const menuButton = document.getElementById("menu-button");
+  const buttonColumn = document.getElementById("button-column");
 
   menuButton.addEventListener("click", () => {
     toggleMenu(buttonColumn);
-  })
+  });
 });
