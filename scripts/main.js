@@ -71,6 +71,14 @@ function renderItems(infoItems, items, isContact) {
   });
 }
 
+function toggleMenu(buttonColumn) {
+  if (buttonColumn.style.maxHeight) {
+    buttonColumn.style.maxHeight = null;
+  } else {
+    buttonColumn.style.maxHeight = buttonColumn.scrollHeight + "px";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector('.emoticon-container');  
   emoticonIntervalId = setInterval(() => {
@@ -104,8 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
           createEmoticon(emoticon, container);
         }, 200);
          // type every 60ms
-        buttonColumn.classList.toggle('max-h-0');
-        buttonColumn.classList.toggle('max-h-[24rem]');
+        toggleMenu(buttonColumn);
       }
     });
   });
@@ -116,8 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttonColumn = document.getElementById('button-column');
 
   menuButton.addEventListener("click", () => {
-    buttonColumn.classList.toggle('max-h-0');
-    buttonColumn.classList.toggle('max-h-[24rem]');
+    toggleMenu(buttonColumn);
   })
-  console.log("wuat ")
 });
