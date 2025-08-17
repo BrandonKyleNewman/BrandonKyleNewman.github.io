@@ -14,15 +14,15 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body class="flex flex-col justify-center bg-[#FFF7D6] dark:bg-black font-serif text-black dark:text-white">
+  <body class="relative flex flex-col justify-center bg-[#FFF7D6] dark:bg-black font-serif text-black dark:text-white">
     <div class="top-0 z-10 md:absolute sticky flex flex-col md:flex-[1] items-center md:items-end w-full">
       <!-- Hamburger Icon (Mobile Only) -->
       <button id="menu-button" class="flex justify-center items-center w-full text-black dark:text-white">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 md:w-10 h-5 md:h-10 text-black dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      <div id="button-column" class="md:top-0 md:right-10 md:absolute flex flex-col md:space-y-2 bg-[#FFF7D6] dark:bg-black w-full md:w-1/6 max-h-0 overflow-hidden transition-[max-height] duration-200 ease-in-out">
+      <div id="button-column" class="top-full md:top-0 md:right-10 absolute flex flex-col md:space-y-2 bg-[#FFF7D6] dark:bg-black w-full md:w-1/6 overflow-hidden scale-y-0 origin-top transition-transform duration-200 ease-in-out">
         <button data-section="about" class="bg-[#FF1E71] hover:bg-[#FF1E71]/50 px-4 py-2 text-white hover:text-black whitespace-nowrap transition-all">about me</button>
         <button data-section="work" class="bg-[#F7D439] hover:bg-[#F7D439]/50 px-4 py-2 text-black hover:text-black whitespace-nowrap transition-all">work</button>
         <button data-section="tools" class="bg-[#39F77C] hover:bg-[#39F77C]/50 px-4 py-2 text-black hover:text-black whitespace-nowrap transition-all">tools</button>

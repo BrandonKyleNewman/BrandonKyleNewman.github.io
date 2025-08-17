@@ -78,11 +78,8 @@ function renderItems(infoItems, items, isContact) {
 }
 
 function toggleMenu(buttonColumn) {
-  if (buttonColumn.style.maxHeight) {
-    buttonColumn.style.maxHeight = null;
-  } else {
-    buttonColumn.style.maxHeight = buttonColumn.scrollHeight + "px";
-  }
+  buttonColumn.classList.toggle("scale-y-0");
+  buttonColumn.classList.toggle("scale-y-100");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
