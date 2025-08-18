@@ -60,7 +60,7 @@ function renderItems(infoItems, items, isContact) {
     if (item.description) {
       if (isContact) {
         descEl = document.createElement("a");
-        descEl.className = "text-base text-gray-800 block";
+        descEl.className = "text-sm text-gray-800 block break-words break-all";
         descEl.href = item.description;
       } else {
         descEl = document.createElement("p");
