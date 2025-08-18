@@ -11,7 +11,9 @@ function createEmoticon(emoticon, container) {
     "mr-4",
     "inline-block",
     "whitespace-nowrap",
-    "font-mono"
+    "font-mono",
+    "w-full",
+    "md:w-auto"
   );
 
   // assign a random pastel color
@@ -20,6 +22,9 @@ function createEmoticon(emoticon, container) {
   colorIndex++;
 
   span.textContent = emoticon;
+  if (emoticon === "hello ") {
+    span.classList.add("text-[0.75rem]");
+  }
   container.appendChild(span);
 
   // check if we've overflown the container
@@ -60,7 +65,7 @@ function renderItems(infoItems, items, isContact) {
     if (item.description) {
       if (isContact) {
         descEl = document.createElement("a");
-        descEl.className = "text-base text-gray-800 block";
+        descEl.className = "text-sm text-gray-800 block break-words break-all";
         descEl.href = item.description;
       } else {
         descEl = document.createElement("p");
