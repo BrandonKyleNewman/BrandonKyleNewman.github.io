@@ -10,7 +10,7 @@ export const sections = {
       },
       {
         name: "Husband & Dog Dad",
-        description: "delanie. ajax."
+        description: "delanie. ajax.",
       },
       {
         name: "New York City",
@@ -18,7 +18,7 @@ export const sections = {
       },
       {
         name: "Assorted Hobbies",
-        description: "tennis. u2. coding. reality tv. fitness. cooking."
+        description: "tennis. u2. coding. reality tv. fitness. cooking.",
       },
     ],
   },
@@ -30,23 +30,23 @@ export const sections = {
       {
         name: "Courier Health",
         description: "backend. platform team.",
-        subheader: "2025 - present"
+        subheader: "2025 - present",
       },
       {
         name: "Capital One",
         description: "backend. rewards team.",
-        subheader: "2022 - 2024"
+        subheader: "2022 - 2024",
       },
       {
         name: "Lark Health",
         description: "backend. user management team.",
-        subheader: "2020 - 2021"
+        subheader: "2020 - 2021",
       },
       {
         name: "Workday",
         description: "backend. absence team.",
-        subheader: "2014 - 2020"
-      }
+        subheader: "2014 - 2020",
+      },
     ],
   },
   tools: {
@@ -56,7 +56,8 @@ export const sections = {
     items: [
       {
         name: "cloud",
-        description: "aws. ec2. lambda. glue. s3. docker. terraform. snowflake.",
+        description:
+          "aws. ec2. lambda. glue. s3. docker. terraform. snowflake.",
       },
       {
         name: "languages",
@@ -65,7 +66,7 @@ export const sections = {
       {
         name: "databases",
         description: "postgres. mysql. dynamodb. mongodb.",
-      }, 
+      },
       {
         name: "devops",
         description: "jenkins. github actions.",
@@ -73,8 +74,8 @@ export const sections = {
       {
         name: "testing",
         description: "jest. postman. pytest.",
-      }, 
-    ]
+      },
+    ],
   },
   contact: {
     emoticon: "<3",
@@ -83,16 +84,16 @@ export const sections = {
     items: [
       {
         name: "email",
-        description: "brandonkylenewman@gmail.com"
+        description: "brandonkylenewman@gmail.com",
       },
       {
         name: "linkedin",
-        description: "linkin.com/in/brandonkylenewman"
+        description: "linkedin.com/in/brandonkylenewman",
       },
       {
         name: "bluesky",
         description: "brandon-newman.bsky.social",
       },
-    ]
-  }
+    ],
+  },
 };

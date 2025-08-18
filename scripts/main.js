@@ -60,13 +60,13 @@ function renderItems(infoItems, items, isContact) {
     if (item.description) {
       if (isContact) {
         descEl = document.createElement("a");
+        descEl.className = "text-base text-gray-800 block";
         descEl.href = item.description;
       } else {
         descEl = document.createElement("p");
-        descEl.textContent = item.description;
+        descEl.className = "text-base text-gray-800";
       }
       descEl.textContent = item.description;
-      descEl.className = "text-base text-gray-800";
       textDiv.appendChild(descEl);
     }
 
