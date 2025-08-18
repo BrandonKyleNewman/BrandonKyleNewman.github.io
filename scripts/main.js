@@ -11,7 +11,9 @@ function createEmoticon(emoticon, container) {
     "mr-4",
     "inline-block",
     "whitespace-nowrap",
-    "font-mono"
+    "font-mono",
+    "w-full",
+    "md:w-auto"
   );
 
   // assign a random pastel color
@@ -20,6 +22,9 @@ function createEmoticon(emoticon, container) {
   colorIndex++;
 
   span.textContent = emoticon;
+  if (emoticon === "hello ") {
+    span.classList.add("text-[0.75rem]");
+  }
   container.appendChild(span);
 
   // check if we've overflown the container
