@@ -1,7 +1,7 @@
 import { sections } from "./data.js";
 
 let emoticonIntervalId = null;
-const colorPalette = ["#39F77C", "#F7D439", "#5539F7", "#FF1E71"];
+const colorPalette = ["#39F77C", "#F7D439", "#24BAFF", "#FF1E71"];
 let colorIndex = 0;
 
 function createEmoticon(emoticon, container) {
@@ -55,7 +55,7 @@ function renderItems(infoItems, items, isContact) {
     // Subheader (optional)
     if (item.subheader) {
       const subheaderEl = document.createElement("p");
-      subheaderEl.className = "text-sm text-gray-600";
+      subheaderEl.className = "text-sm";
       subheaderEl.textContent = item.subheader;
       textDiv.appendChild(subheaderEl);
     }
@@ -65,11 +65,11 @@ function renderItems(infoItems, items, isContact) {
     if (item.description) {
       if (isContact) {
         descEl = document.createElement("a");
-        descEl.className = "text-sm text-gray-800 block break-words break-all";
+        descEl.className = "text-sm block break-words break-all";
         descEl.href = item.description;
       } else {
         descEl = document.createElement("p");
-        descEl.className = "text-base text-gray-800";
+        descEl.className = "text-base";
       }
       descEl.textContent = item.description;
       textDiv.appendChild(descEl);
