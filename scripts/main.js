@@ -8,12 +8,12 @@ function createEmoticon(emoticon, container) {
   const span = document.createElement("span");
   span.classList.add(
     "emoticon",
-    "mr-4",
-    "inline-block",
-    "whitespace-nowrap",
+    "w-full", // force each span to take full row
+    "md:w-auto", // go back to auto on medium+
+    "text-center", // <-- centers the text inside on mobile
     "font-mono",
-    "w-full",
-    "md:w-auto"
+    "whitespace-nowrap",
+    "mr-4" // spacing when they’re side by side
   );
 
   // assign a random pastel color
