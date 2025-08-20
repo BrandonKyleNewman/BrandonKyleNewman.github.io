@@ -1,7 +1,7 @@
 import { sections } from "./data.js";
 
 let emoticonIntervalId = null;
-const colorPalette = ["#39F77C", "#F7D439", "#24BAFF", "#FF1E71"];
+const colorPalette = ["#FF0040", "#FFCA2A", "#62D681", "#00A9D8"];
 let colorIndex = 0;
 
 function createEmoticon(emoticon, container) {
