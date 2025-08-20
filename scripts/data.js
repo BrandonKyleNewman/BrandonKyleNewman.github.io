@@ -1,8 +1,8 @@
 export const sections = {
   about: {
     emoticon: ":)",
-    heading: "Brandon Newman",
-    text: "A little about me for the curious.",
+    heading: "About Me",
+    text: "A little more about me for the curious. Inquire more if your interest is throughly piqued.",
     items: [
       {
         name: "Software Engineer",
@@ -52,7 +52,7 @@ export const sections = {
   tools: {
     emoticon: "#-",
     heading: "Tools",
-    text: "A selection of tools of the trade.",
+    text: "A selection of my tools of the trade. Always excited to learn and add to the collection.",
     items: [
       {
         name: "cloud",
@@ -80,7 +80,7 @@ export const sections = {
   contact: {
     emoticon: "<3",
     heading: "Contact",
-    text: "I hope to hear nice things from you: ",
+    text: "In order of the easist way to get ahold of me. I hope to hear nice things from you.",
     items: [
       {
         name: "email",

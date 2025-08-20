@@ -13,7 +13,7 @@ function createEmoticon(emoticon, container) {
     "text-center", // <-- centers the text inside on mobile
     "font-mono",
     "whitespace-nowrap",
-    "mr-4" // spacing when they’re side by side
+    "px-2" // spacing when they’re side by side
   );
 
   // assign a random pastel color
@@ -24,6 +24,7 @@ function createEmoticon(emoticon, container) {
   span.textContent = emoticon;
   if (emoticon === "hello ") {
     span.classList.add("text-[0.75rem]");
+    span.classList.add("md:text-[1.5rem]");
   }
   container.appendChild(span);
 
