@@ -1,19 +1,19 @@
 import { sections } from "./data.js";
 
 let emoticonIntervalId = null;
-const colorPalette = ["#39F77C", "#F7D439", "#5539F7", "#FF1E71"];
+const colorPalette = ["#FF0040", "#FFCA2A", "#62D681", "#00A9D8"];
 let colorIndex = 0;
 
 function createEmoticon(emoticon, container) {
   const span = document.createElement("span");
   span.classList.add(
     "emoticon",
-    "mr-4",
-    "inline-block",
-    "whitespace-nowrap",
+    "w-full", // force each span to take full row
+    "md:w-auto", // go back to auto on medium+
+    "text-center", // <-- centers the text inside on mobile
     "font-mono",
-    "w-full",
-    "md:w-auto"
+    "whitespace-nowrap",
+    "mr-4" // spacing when they’re side by side
   );
 
   // assign a random pastel color
@@ -55,7 +55,7 @@ function renderItems(infoItems, items, isContact) {
     // Subheader (optional)
     if (item.subheader) {
       const subheaderEl = document.createElement("p");
-      subheaderEl.className = "text-sm text-gray-600";
+      subheaderEl.className = "text-sm";
       subheaderEl.textContent = item.subheader;
       textDiv.appendChild(subheaderEl);
     }
@@ -65,11 +65,11 @@ function renderItems(infoItems, items, isContact) {
     if (item.description) {
       if (isContact) {
         descEl = document.createElement("a");
-        descEl.className = "text-sm text-gray-800 block break-words break-all";
+        descEl.className = "text-sm block break-words break-all";
         descEl.href = item.description;
       } else {
         descEl = document.createElement("p");
-        descEl.className = "text-base text-gray-800";
+        descEl.className = "text-base";
       }
       descEl.textContent = item.description;
       textDiv.appendChild(descEl);
