@@ -107,11 +107,10 @@ function toggleMenu(buttonColumn) {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderSection("about");
-});
 
-document.addEventListener("DOMContentLoaded", () => {
   const navButtons = document.querySelectorAll("[data-section]");
   const buttonColumn = document.getElementById("button-column");
+  const menuButton = document.getElementById("menu-button");
 
   navButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -122,11 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const menuButton = document.getElementById("menu-button");
-  const buttonColumn = document.getElementById("button-column");
 
   menuButton.addEventListener("click", () => {
     toggleMenu(buttonColumn);
