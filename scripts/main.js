@@ -22,10 +22,6 @@ function createEmoticon(emoticon, container) {
   colorIndex++;
 
   span.textContent = emoticon;
-  if (emoticon === "hello ") {
-    span.classList.add("text-[0.75rem]");
-    span.classList.add("md:text-[1.5rem]");
-  }
   container.appendChild(span);
 
   // check if we've overflown the container
@@ -101,7 +97,7 @@ function renderSection(sectionKey) {
 
   emoticonIntervalId = setInterval(() => {
     createEmoticon(emoticon, emoticonSection);
-  }, 200);
+  }, 500);
 }
 
 function toggleMenu(buttonColumn) {
