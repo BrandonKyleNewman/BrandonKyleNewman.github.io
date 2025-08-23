@@ -83,48 +83,45 @@ function renderItems(infoItems, items, isContact) {
   });
 }
 
+function renderSection(sectionKey) {
+  const emoticonSection = document.querySelector(".emoticon-container");
+  const heading = document.getElementById("heading");
+  const description = document.getElementById("description");
+  const infoItems = document.getElementById("info-items");
+
+  emoticonSection.textContent = "";
+  heading.textContent = sections[sectionKey].heading;
+  description.textContent = sections[sectionKey].text;
+  renderItems(infoItems, sections[sectionKey].items, sectionKey === "contact");
+
+  const emoticon = sections[sectionKey].emoticon;
+  if (emoticonIntervalId !== null) {
+    clearInterval(emoticonIntervalId);
+  }
+
+  emoticonIntervalId = setInterval(() => {
+    createEmoticon(emoticon, emoticonSection);
+  }, 200);
+}
+
 function toggleMenu(buttonColumn) {
   buttonColumn.classList.toggle("scale-y-0");
   buttonColumn.classList.toggle("scale-y-100");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".emoticon-container");
-  emoticonIntervalId = setInterval(() => {
-    createEmoticon("hello ", container);
-  }, 200);
+  renderSection("about");
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const navButtons = document.querySelectorAll("[data-section]");
   const buttonColumn = document.getElementById("button-column");
-  const middleContent = document.querySelector(".emoticon-container");
-  const heading = document.getElementById("heading");
-  const description = document.getElementById("description");
-  const infoItems = document.getElementById("info-items");
 
   navButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const section = button.dataset.section;
       if (sections[section]) {
-        middleContent.textContent = "";
-        heading.textContent = sections[section].heading;
-        description.textContent = sections[section].text;
-        renderItems(
-          infoItems,
-          sections[section].items,
-          sections[section].heading === "Contact"
-        );
-
-        const emoticon = sections[section].emoticon;
-        const container = document.querySelector(".emoticon-container");
-        if (emoticonIntervalId !== null) {
-          clearInterval(emoticonIntervalId);
-        }
-        emoticonIntervalId = setInterval(() => {
-          createEmoticon(emoticon, container);
-        }, 200);
-        // type every 60ms
+        renderSection(section);
         toggleMenu(buttonColumn);
       }
     });

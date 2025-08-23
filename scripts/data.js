@@ -1,16 +1,12 @@
 export const sections = {
   about: {
     emoticon: ":)",
-    heading: "About Me",
-    text: "A little more about me for the curious. Inquire more if your interest is throughly piqued.",
+    heading: "hello",
+    text: "I'm Brandon Newman. I'm a software engineer based in NYC. I currently work on the platform team at Courier Health, working primarily on our data ingest and materialize functionality.",
     items: [
       {
         name: "Software Engineer",
         description: "10+ years of solving puzzles for a living.",
-      },
-      {
-        name: "Husband & Dog Dad",
-        description: "delanie. ajax.",
       },
       {
         name: "New York City",
